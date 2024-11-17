@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 21226392}
   - component: {fileID: 6149632}
   - component: {fileID: 5076126}
-  - component: {fileID: -442559018479332768}
+  - component: {fileID: -5199894757479407606}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: 21300000, guid: 0943799b6d00f40439e8af54a7d83f2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-442559018479332768
+--- !u!114 &-5199894757479407606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf63c1814ec1ed4794454ebc4657644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
+  damage: 2

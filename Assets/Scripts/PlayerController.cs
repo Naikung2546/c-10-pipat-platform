@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	bool facingRight = true;
 
-	Rigidbody2D r2d;
+	 Rigidbody2D r2d;
 	Animator anim;
 
 	public bool grounded = false;

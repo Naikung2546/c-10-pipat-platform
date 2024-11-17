@@ -1,20 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Banana : Weapon
 {
+    
+    [SerializeField] private float speed;
+
 
     public void Start()
     {
-        Damage = 30;
-        speed = 4f * GetShootDirection();
-        Move();
-           
+        Damage = 2;
+        speed = 4.0f * GetShootDirection();
     }
 
-
-    [SerializeField] private float speed;
 
     public override void Move()
     {
@@ -22,8 +22,8 @@ public class Banana : Weapon
         float newY = transform.position.y;
         Vector2 newPosition = new Vector2(newX, newY);
         transform.position = newPosition;
-
     }
+
     private void FixedUpdate()
     {
         Move();
@@ -34,9 +34,11 @@ public class Banana : Weapon
     public override void OnHitWith(Character character)
     {
         if (character is Enemy)
-        {
+        { 
             character.TakeDamage(this.Damage);
+            Destroy(this.gameObject);
         }
-        //Console.WriteLine()
+        
     }
+
 }

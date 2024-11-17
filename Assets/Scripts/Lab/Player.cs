@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Player : Character, IShootable
 {
@@ -9,18 +11,9 @@ public class Player : Character, IShootable
     [field: SerializeField] public float BulletSpawnTime { get; set; }
     [field: SerializeField] public float BulletTimer { get; set; }
 
-    private void Update()
-    {
-        Shoot();
-    }
-    private void FixedUpdate()
-    {
-        BulletSpawnTime += Time.fixedDeltaTime;
-    }
-
     public void Shoot()
     {
-        if (Input.GetButtonDown("Fire1") && BulletSpawnTime >= BulletTimer)
+        if (Input.GetButtonDown("1") && BulletSpawnTime >= BulletTimer)
         {
             GameObject obj = Instantiate(Bullet, BulletSpawnPoint.position, Quaternion.identity);
             Banana banana = obj.GetComponent<Banana>();
@@ -28,4 +21,24 @@ public class Player : Character, IShootable
             BulletSpawnTime = 0;
         }
     }
+
+    void Start()
+    {
+        Init(10);
+        BulletTimer = 1.0f;
+        BulletSpawnTime = 0.0f;
+
+    }
+
+    public void Update()
+    {
+        Shoot();
+    }
+
+    private void FixedUpdate()
+    {
+        BulletSpawnTime += Time.fixedDeltaTime;
+    }
+
+
 }
